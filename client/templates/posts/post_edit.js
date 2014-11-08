@@ -16,7 +16,7 @@ Template.postEdit.events({
       }
       
       if (result && result.postExists) {
-        throwError("Post already exists");
+        return throwError("Post already exists");
       }
     });
 
@@ -28,7 +28,7 @@ Template.postEdit.events({
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
       Posts.remove(currentPostId, function(err) {
-        if (err) { alert(err.reason); }
+        if (err) { return alert(err.reason); }
       });
       Router.go("postsList");
     }
