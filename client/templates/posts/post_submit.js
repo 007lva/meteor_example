@@ -36,6 +36,6 @@ Template.postSubmit.helpers({
     return Session.get("postSubmitErrors")[field];
   },
   errorClass: function(field) {
-    return !!Session.get("postSubmitErrors")[field] ? "has-error" : "";
+    return Session.get("postSubmitErrors")[field] ? "has-error" : "";
   }
 });
